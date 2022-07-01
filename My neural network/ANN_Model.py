@@ -61,11 +61,9 @@ class MyANN:
         return np.argmax(X, 0)
     
     def get_accuracy(self, predictions, Y):
-        #print(predictions, Y)
         return np.sum(predictions == Y) / Y.size
 
     def gradient_descent(self, X, Y, alpha, iterations):
-        #W1, b1, W2, b2 = init_params()
         weights = self.init_weights()
 
         for i in range(iterations):
@@ -75,6 +73,5 @@ class MyANN:
             if i % 10 == 0:
                 print("Iteration: ", i)
                 predictions = self.get_predictions(Xs[-1].T)
-                #print(predictions.shape)
                 print("Neural model accuracy is =", self.get_accuracy(predictions, Y))
         return 
